@@ -1,4 +1,8 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+# _Welcome to Evilsaint1022-DISCORD-BOT_
+
+
 This is a discord bot that is specially made for the Evilsaint1022 discord server. This bot is not modular and everyone is hard coded into the discord bot.
 The purpose of making this discord bot open source is to show that there is no malicious code but also hope to inspire people to make there own discord bots.
 
