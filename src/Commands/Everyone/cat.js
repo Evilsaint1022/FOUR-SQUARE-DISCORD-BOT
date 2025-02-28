@@ -8,9 +8,8 @@ module.exports = {
     description: 'Get a random cat image from The Cat API',
   },
   async execute(interaction) {
-    const { user, channel, guild } = interaction;
-    const timestamp = new Date().toLocaleTimeString();
-    const guildIconUrl = guild.iconURL({ dynamic: true, format: 'png' }) || '';
+    const guildName = interaction.guild.name;
+    const guildId = interaction.guild.id;
 
     const { data } = await axios.get('https://api.thecatapi.com/v1/images/search', {
       headers: {
@@ -24,7 +23,7 @@ module.exports = {
     await interaction.reply({ content: messageContent });
 
       // Console Logs
-  console.log(`[${new Date().toLocaleTimeString()}] ${interaction.user.username} used the cat command.`)
+  console.log(`[${new Date().toLocaleTimeString()}] ${guildName} ${guildId} ${interaction.user.username} used the cat command.`)
   },
 };
 

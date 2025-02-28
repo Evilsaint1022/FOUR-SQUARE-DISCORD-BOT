@@ -8,10 +8,8 @@ module.exports = {
     description: 'Get a random dog image from The Dog API',
   },
   async execute(interaction) {
-    const { user, channel, guild } = interaction;
-    const timestamp = new Date().toLocaleTimeString();
-    const guildIconUrl = guild.iconURL({ dynamic: true, format: 'png' }) || '';
-
+    const guildName = interaction.guild.name;
+        const guildId = interaction.guild.id;
     try {
       const { data } = await axios.get('https://api.thedogapi.com/v1/images/search', {
         headers: { 'x-api-key': dogApiKey },
@@ -23,7 +21,7 @@ module.exports = {
       await interaction.reply({ content: messageContent });
 
       // Console Logs
-      console.log(`[${new Date().toLocaleTimeString()}] ${interaction.user.username} used the dog command.`);
+      console.log(`[${new Date().toLocaleTimeString()}] ${guildName} ${guildId} ${interaction.user.username} used the dog command.`);
     } catch (error) {
       console.error(error);
     }

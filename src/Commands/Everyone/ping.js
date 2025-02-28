@@ -9,6 +9,8 @@ module.exports = {
         .setName('ping')
         .setDescription('Replies with Pong!'),
     async execute(interaction) {
+        const guildName = interaction.guild.name;
+        const guildId = interaction.guild.id;
         const start = Date.now();
         await interaction.reply('Pinging...');
 
@@ -26,7 +28,7 @@ module.exports = {
         await interaction.editReply({ embeds: [pingEmbed] });
 
         // Console Logs
-        console.log(`[${new Date().toLocaleTimeString()}] ${interaction.user.username} used the ping command.`);
+        console.log(`[${new Date().toLocaleTimeString()}] ${guildName} ${guildId} ${interaction.user.username} used the ping command.`);
 
     },
 };

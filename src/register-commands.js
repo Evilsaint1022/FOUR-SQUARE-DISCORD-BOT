@@ -35,6 +35,31 @@ const commands = [
 
 // ------------------------------------------------- @Staff Application Commands ------------------------------------------------------------------------
 
+{
+    name: 'echo',
+    description: 'Replies with the message you provide',
+    options: [
+        {
+            name: 'message',
+            description: 'The message to echo back',
+            type: 3,
+            required: true,
+        },
+    ],
+},
+{
+    name: 'setwhitelistedroles',
+    description: 'Sets the whitelisted roles for the echo command',
+    options: [
+        {
+            name: 'role',
+            description: 'Role to whitelist',
+            type: 8,
+            required: true,
+        },
+    ],
+},
+
 ];
 
 // Rest -------------------------------------------------------------------------------------------------------------------------------------------------

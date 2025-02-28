@@ -14,6 +14,8 @@ module.exports = {
         // Get the specified user, or default to the interaction user if none is specified
         const user = interaction.options.getUser('user') || interaction.user;
         const timestamp = new Date().toLocaleTimeString();
+        const guildName = interaction.guild.name;
+        const guildId = interaction.guild.id;
         // Fetch avatar URL with high resolution
         const avatarUrl = user.displayAvatarURL({ dynamic: true, size: 1024 });
 
@@ -29,7 +31,7 @@ module.exports = {
         await interaction.reply({ embeds: [avatarEmbed] });
 
         // Console Logs
-        console.log(`[${timestamp}] ${interaction.user.username} used the avatar command for ${user.username}'s avatar.`);
+        console.log(`[${timestamp}] ${guildName} ${guildId} ${interaction.user.username} used the avatar command for ${user.username}'s avatar.`);
 
       }
     };

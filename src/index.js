@@ -10,7 +10,7 @@ require('dotenv').config();
 const { loadEvents } = require('../src/Handlers/eventHandler');
 const commandHandler = require('../src/Handlers/commandHandler');
 const { registerCommands } = require('./register-commands');
-const { Client, Collection, Partials, GatewayIntentBits, ActivityType, bold } = require('discord.js');
+const { Client, Collection, Partials, GatewayIntentBits, ActivityType, } = require('discord.js');
 const { user, Message, GuildMember, ThreadMember } = Partials;
 
 // Load Console Colors --------------------------------------------------------------------------------------------------------------
@@ -53,11 +53,11 @@ client.once("ready", () => {
 
     setInterval(() => {
         const activities = [
-            "Version 1.0",
             "Shopping at PaknSave",
             "Nek Minnit",
             "Awww Gummon",
-            "Made By Evilsaint1022"
+            "Built Like a Mitre 10",
+            "NZ Reperzent",
         ];
         const activity = activities[Math.floor(Math.random() * activities.length)];
         client.user.setActivity(activity, { type: ActivityType.Custom });
