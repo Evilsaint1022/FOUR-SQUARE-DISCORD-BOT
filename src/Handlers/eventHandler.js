@@ -1,31 +1,38 @@
+const ascii = require('ascii-table');
+const fs = require('fs');
+const path = require('path');
+
 function loadEvents(client) {
-    const ascii = require('ascii-table');
-    const fs = require('fs');
     const table = new ascii().setHeading("Events", "Status");
 
-    const folders = fs.readdirSync('./src/Events'); // Get all the folders in the Events directory
+    const eventDir = path.join(__dirname, '..', 'Events'); // Get the path to the Events folder
+    const folders = fs.readdirSync(eventDir); // Get all folders in the Events directory
+    
     for (const folder of folders) {
-        table.addRow(folder, ""); // Add the folder name as a title row
+        const folderPath = path.join(eventDir, folder);
+        if (fs.statSync(folderPath).isDirectory()) { // Ensure it's a directory
+            table.addRow(folder, ""); // Add folder name as a title row
 
-        const files = fs.readdirSync(`./src/Events/${folder}`).filter((file) => file.endsWith(".js"));
-        for (const file of files) {
-            const event = require(`../src/Events/${folder}/${file}`); // Load the event file
+            const files = fs.readdirSync(folderPath).filter((file) => file.endsWith(".js"));
+            for (const file of files) {
+                const event = require(path.join(folderPath, file)); // Load the event file
 
-            // Register event based on whether it uses REST or not
-            if (event.rest) {
-                if (event.once)
-                    client.rest.once(event.name, (...args) => event.execute(...args, client));
-                else
-                    client.rest.on(event.name, (...args) => event.execute(...args, client));
-            } else {
-                if (event.once)
-                    client.once(event.name, (...args) => event.execute(...args, client));
-                else
-                    client.on(event.name, (...args) => event.execute(...args, client));
+                // Register event based on whether it uses REST or not
+                if (event.rest) {
+                    if (event.once)
+                        client.rest.once(event.name, (...args) => event.execute(...args, client));
+                    else
+                        client.rest.on(event.name, (...args) => event.execute(...args, client));
+                } else {
+                    if (event.once)
+                        client.once(event.name, (...args) => event.execute(...args, client));
+                    else
+                        client.on(event.name, (...args) => event.execute(...args, client));
+                }
+
+                // Add the event file under the respective folder title
+                table.addRow(`  ${file}`, "Loaded");
             }
-
-            // Add the event file under the respective folder title
-            table.addRow(`  ${file}`, "Loaded"); // Indent the file name for better readability
         }
     }
 

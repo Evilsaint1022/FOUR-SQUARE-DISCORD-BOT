@@ -54,10 +54,10 @@ client.once("ready", () => {
     setInterval(() => {
         const activities = [
             "Shopping at PaknSave",
-            "Nek Minnit",
-            "Awww Gummon",
-            "Built Like a Mitre 10",
-            "NZ Reperzent",
+            "✌🏻Nek Minnit",
+            "🤌🏼Awww Gummon",
+            "🗿Built Like a Mitre 10",
+            "Made in New Zealand",
         ];
         const activity = activities[Math.floor(Math.random() * activities.length)];
         client.user.setActivity(activity, { type: ActivityType.Custom });

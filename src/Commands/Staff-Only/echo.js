@@ -14,7 +14,7 @@ module.exports = {
 
     async execute(interaction) {
         const guildId = interaction.guild.id;
-        const guildName = interaction.guild.name.replace(/[^a-zA-Z0-9]/g, '_'); // Sanitize folder name
+        const guildName = interaction.guild.name;
         
         // Define the directory path based on Server Name and Guild ID
         const dirPath = path.join(__dirname, `../../Utilities/Servers/${guildName}_${guildId}/Whitelisted_Roles/`);
@@ -51,8 +51,11 @@ module.exports = {
         
         // Send the message content in the same channel
         await interaction.channel.send(messageContent);
+
+        // Console Logs
+    console.log(`[${new Date().toLocaleTimeString()}] ${guildName} ${guildId} ${interaction.user.username} used the echo command. Message: ${messageContent}`);
         
         // Reply to the user with an ephemeral message confirming the message was sent
         await interaction.reply({ content: 'Your message has been sent!', ephemeral: true });
-    }
+    },
 };

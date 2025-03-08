@@ -3,20 +3,21 @@
     "@discordjs/builders": "^1.10.1",
     "@discordjs/rest": "^2.4.3",
     "@discordjs/voice": "^0.18.0",
-    "@napi-rs/canvas": "^0.1.67",
+    "@napi-rs/canvas": "^0.1.68",
     "ascii-table": "^0.0.9",
-    "axios": "^1.8.1",
+    "axios": "^1.8.2",
     "child_process": "^1.0.2",
     "colors": "^1.4.0",
     "discord.js": "^14.18.0",
     "dotenv": "^16.4.7",
     "fs": "^0.0.1-security",
     "node": "^23.9.0",
+    "node-fetch": "^3.3.2",
     "path": "^0.12.7",
     "register-commands": "^1.0.0",
     "table": "^6.9.0"
   },
-  "name": "silverfern-nz",
+  "name": "evilsaint1022",
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
@@ -26,7 +27,7 @@
   "author": "Evilsaint1022",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^9.21.0",
+    "eslint": "^9.22.0",
     "nodemon": "^3.1.9"
   },
   "description": ""

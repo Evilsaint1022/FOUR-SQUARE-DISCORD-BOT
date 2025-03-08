@@ -17,8 +17,8 @@ module.exports = {
             return interaction.reply({ content: 'You do not have permission to use this command.', ephemeral: true });
         }
 
+        const guildName = interaction.guild.name;
         const guildId = interaction.guild.id;
-        const guildName = interaction.guild.name.replace(/[^a-zA-Z0-9]/g, '_');
         const dirPath = path.join(__dirname, `../../Utilities/Servers/${guildName}_${guildId}/Whitelisted_Roles/`);
         const rolesFilePath = path.join(dirPath, 'whitelisted_roles.json');
         
@@ -43,5 +43,8 @@ module.exports = {
         }
         
         await interaction.reply({ content: `The role <@&${role.id}> has been added to the whitelist.`, ephemeral: true });
+
+        // Console Logs
+        console.log(`[${new Date().toLocaleTimeString()}] ${guildName} ${guildId} ${interaction.user.username} used the setwhitelistedroles command. Added role <@&${role.id}> to the whitelist.`);
     }
 };
