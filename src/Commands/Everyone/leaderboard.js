@@ -58,7 +58,7 @@ module.exports = {
                 new ButtonBuilder().setCustomId('next').setLabel('Next').setStyle(ButtonStyle.Primary).setDisabled(currentPage === totalPages - 1)
             );
 
-        const message = await interaction.reply({ embeds: [generateLeaderboardEmbed(currentPage)], components: [row()], fetchReply: true });
+        const message = await interaction.reply({ embeds: [generateLeaderboardEmbed(currentPage)], components: [row()] });
 
         const collector = message.createMessageComponentCollector({ componentType: ComponentType.Button, time: 60000 });
 
