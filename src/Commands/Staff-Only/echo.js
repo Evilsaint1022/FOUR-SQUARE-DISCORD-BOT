@@ -44,18 +44,19 @@ module.exports = {
         const hasPermission = WHITELISTED_ROLE_IDS.some(roleId => memberRoles.includes(roleId));
         
         if (!hasPermission) {
-            return interaction.reply({ content: 'You do not have permission to use this command.', ephemeral: true });
+            return interaction.reply({ content: 'You do not have permission to use this command.', flags: 64 });
         }
         
+        // Get the message content
         const messageContent = interaction.options.getString('message');
         
         // Send the message content in the same channel
         await interaction.channel.send(messageContent);
 
         // Console Logs
-    console.log(`[${new Date().toLocaleTimeString()}] ${guildName} ${guildId} ${interaction.user.username} used the echo command. Message: ${messageContent}`);
+        console.log(`[${new Date().toLocaleTimeString()}] ${guildName} ${guildId} ${interaction.user.username} used the echo command. Message: ${messageContent}`);
         
         // Reply to the user with an ephemeral message confirming the message was sent
-        await interaction.reply({ content: 'Your message has been sent!', ephemeral: true });
+        await interaction.reply({ content: 'Your message has been sent!', flags: 64 });
     },
 };
