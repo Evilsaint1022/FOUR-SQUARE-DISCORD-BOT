@@ -34,7 +34,7 @@ module.exports = async (client) => {
                                 ...command,
                                 folder // Add the folder info to the command object
                             });
-                            table.addRow(`    ${command.data.name} `, 'Loaded'); // Indent command name for better readability
+                            table.addRow(`    ${command.data.name} `,'Loaded'); // Indent command name for better readability
                         } else {
                             table.addRow(`${file}`, 'Error: Missing command data'); // Indent error row
                         }

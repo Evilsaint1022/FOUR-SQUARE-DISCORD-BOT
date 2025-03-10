@@ -10,6 +10,7 @@ require('dotenv').config();
 const { loadEvents } = require('../src/Handlers/eventHandler');
 const commandHandler = require('../src/Handlers/commandHandler');
 const { registerCommands } = require('./register-commands');
+const loadservers = require('../src/Functions/loadservers');
 const { Client, Collection, Partials, GatewayIntentBits, ActivityType, } = require('discord.js');
 const { user, Message, GuildMember, ThreadMember } = Partials;
 
@@ -41,6 +42,9 @@ client.commands = new Map();
 
 client.once("ready", () => {
     console.log(`[🌿│${client.user.tag} Is Online!]`.bold.green);
+
+    // Loading Servers
+    loadservers(client);
 
     // Registers Application Commands
     registerCommands(client);

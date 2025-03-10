@@ -1,9 +1,9 @@
-const ascii = require('ascii-table');
+const Table = require('ascii-table');  // Updated to use 'Table' instead of 'ascii'
 const fs = require('fs');
 const path = require('path');
 
 function loadEvents(client) {
-    const table = new ascii().setHeading("Events", "Status");
+    const table = new Table().setHeading("Events", "Status");  // Using Table to set headings
 
     const eventDir = path.join(__dirname, '..', 'Events'); // Get the path to the Events folder
     const folders = fs.readdirSync(eventDir); // Get all folders in the Events directory
