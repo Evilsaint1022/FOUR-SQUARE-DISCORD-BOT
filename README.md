@@ -11,23 +11,23 @@ The purpose of making this discord bot open source is to show that there is no m
 
 *Everyone:*
 
-`/avatar`
-`/balance`
-`/cat`
-`/dog`
-`/github`
-`invite`
-`leaderboard`
-`ping`
-`wihdraw`
-`deposit`
-`daily`
+- `/avatar`
+- `/balance`
+- `/cat`
+- `/dog`
+- `/github`
+- `/invite`
+- `/leaderboard`
+- `/ping`
+- `/wihdraw`
+- `/deposit`
+- `/daily`
 
 *Staff-Only:* ( `Requires Administrator Permissions` )
 
-`echo`
-`setwhitelistrole`
-`removewhitelistrole`
+- `/echo`
+- `/setwhitelistrole`
+- `/removewhitelistrole`
 
 if you need any help at all regarding the discord bot code please dm me on discord.   
 `@evilsaint1022`
