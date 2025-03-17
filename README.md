@@ -1,6 +1,6 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-# Evilsaint1022 Discord Bot
+# Four-Square Discord Bot
 
 This is a discord bot that I've been working on in my free time as just a little hobby thing that I've been working on. This bot is a modular discord bot.
 The purpose of making this discord bot open source is to show that there is no malicious code but also hope to inspire people to make there own discord bots.
@@ -22,6 +22,7 @@ The purpose of making this discord bot open source is to show that there is no m
 - `/wihdraw`
 - `/deposit`
 - `/daily`
+- `/level`
 
 *Staff-Only:* ( `Requires Administrator Permissions` )
 
@@ -32,7 +33,7 @@ The purpose of making this discord bot open source is to show that there is no m
 if you need any help at all regarding the discord bot code please dm me on discord.   
 `@evilsaint1022`
 
-# _Evilsaint1022 Support Server_   
+# _Four-Square Support Server_   
 https://discord.com/invite/cVMh7SrvvF                             
 ‎ 
 ‎ 

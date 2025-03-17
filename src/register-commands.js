@@ -84,6 +84,18 @@ const commands = [
         name: 'leaderboard',
         description: 'Displays The Leaderboard',
     },
+    {
+        name: 'level', 
+        description: 'Check your current level or another user\'s level.',
+        options: [
+            {
+                name: 'user',
+                description: 'The user to check the level of',
+                type: 6,
+                required: false,
+            },
+        ]
+    },
 
     // ------------------------------------------------- @Staff Application Commands ------------------------------------------------------------------------
     {
